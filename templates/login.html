@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Login {% endblock %}
+
+{% block style %}
+<style>
+    .container{
+        background: rgb(177, 176, 176);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="Form">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <img src="./static/food.jpg" class="img-fluid" alt="Food Image">
+            </div>
+            <div class="col-lg-7">
+                <form>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="email" placeholder="Email Address" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="password" placeholder="*******" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <button type="button" class="btn1">Login</button>
+                        </div>
+                    </div>
+                    <a href="#">Forgot Password</a>
+                    <p>Don't have an account? <a href="#">Create Account</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

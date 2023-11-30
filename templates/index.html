@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} Home Page {% endblock %}
+
+{% block style %}
+<style>
+    .recipes{
+        background: lightgrey;
+    }
+    .home{
+        background-color: rgba(23, 94, 224, 0.822);
+    }
+    .center{
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="home center">
+    <h1>Recommended Recipes</h1>
+</div>
+<div class="recipes center">
+    {% for i in range(5) %}
+    <div class = "row center">
+    <div class="card col-xs-1 center-block" style="width: 18rem;">
+        <img class="card-img-top" src="{{res["meals"][i]["strMealThumb"]}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{res["meals"][i]["strMeal"]}}</h5>
+          <a  href="{{res["meals"][i]["strSource"]}}" class="btn btn-primary">Get Instructions</a>
+        </div>
+      </div>
+      <div class="card col-xs-1 center-block" style="width: 18rem;">
+        <img class="card-img-top" src="{{res["meals"][i+5]["strMealThumb"]}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{res["meals"][i+5]["strMeal"]}}</h5>
+          <a  href="{{res["meals"][i+5]["strSource"]}}" class="btn btn-primary">Get Instructions</a>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+</div>
+{% endblock %}

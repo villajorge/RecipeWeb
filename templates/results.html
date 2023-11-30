@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title%}Results {% endblock %}
+
+{% block style %}
+<style>
+  .center{
+    text-align: center;
+  }
+
+</style>
+{% endblock %}
+
+{% block content %}
+{% for i in range(3)%}
+<div class="center">
+<div class="row center">
+<div class="card col-xs-1 center-block" style="width: 18rem;">
+    <img class="card-img-top" src="{{res["meals"][i]["strMealThumb"]}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{res["meals"][i]["strMeal"]}}</h5>
+      <a  href="/instructions/{{res["meals"][i]["idMeal"]}}" class="btn btn-primary">Get Instructions</a>
+    </div>
+  </div>
+  <div class="card col-xs-1 center-block" style="width: 18rem;">
+    <img class="card-img-top" src="{{res["meals"][i+3]["strMealThumb"]}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{res["meals"][i+3]["strMeal"]}}</h5>
+      <a  href="/instructions/{{res["meals"][i+3]["idMeal"]}}" class="btn btn-primary">Get Instructions</a>
+    </div>
+  </div>
+  <div class="card col-xs-1 center-block" style="width: 18rem;">
+    <img class="card-img-top" src="{{res["meals"][i+6]["strMealThumb"]}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{res["meals"][i+6]["strMeal"]}}</h5>
+      <a  href="/instructions/{{res["meals"][i+6]["idMeal"]}}" class="btn btn-primary">Get Instructions</a>
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

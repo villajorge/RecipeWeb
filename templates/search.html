@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{%block title%}Search{% endblock %}
+
+
+{% block content %}
+<form action="#" method="post">
+    <p>Ingredient</p>
+    <p><input type="text" name="ingr"></p>
+    <p><input type="submit" value="submit"></p>
+    {% if string != None %}
+        <p>{{string}}</p>
+    {% endif %}
+</form>
+{% endblock %}

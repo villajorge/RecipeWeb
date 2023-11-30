@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Instructions{% endblock %}
+
+{% block style %}
+<style>
+  .center{
+    text-align: center;
+  }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="center">
+    <h1>{{res["meals"][0]["strMeal"]}}</h1>
+    <img src="{{res["meals"][0]["strMealThumb"]}}" alt="">
+</div>
+
+
+<div class="center">
+<table class="table">
+    <thead>
+      <tr>
+        <th class="table-active" scope="col">#</th>
+        <th class="table-active" scope="col">Ingredient</th>
+        <th class="table-active" scope="col">Amount</th>
+      </tr>
+    </thead>
+    {% for i in range(1,21) %}
+        {% if res['meals'][0]['strIngredient'~i] != "" and res['meals'][0]['strIngredient'~i] != None %}
+        <tbody>
+            <tr>
+                <th class="table-info" scope="row">{{i}}</th>
+                <td class="table-info">{{res["meals"][0]["strIngredient"~i]}}</td>
+                <td class="table-info">{{res["meals"][0]["strMeasure"~i]}}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+  </table>
+</div>
+  <div class="center">
+    <h2>Instructions</h2>
+    <p>{{res["meals"][0]["strInstructions"]}}</p>
+  </div>
+
+{% endblock %}
